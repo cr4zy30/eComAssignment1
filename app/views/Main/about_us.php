@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=`device-width`, initial-scale=1.0">
-  <title>Document</title>
+  <title>About us</title>
 </head>
 <body>
-  <p>About us</p>
+  <h1>About us</h1>
+  <p>See our incredible team of devs.</p>
 </body>
 </html>
