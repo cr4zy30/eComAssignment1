@@ -29,6 +29,9 @@
       <textarea type="text" class="form-control"></textarea>
     </div>
   </div>
+  
+  <input type="submit" class="form-control" value="Send!" /> 
+
 </form>
 
 </body>
