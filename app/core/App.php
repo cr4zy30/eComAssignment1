@@ -2,6 +2,7 @@
 namespace app\core;
 
 class App{
+
     private $routes = [];
 
     public function addRoute($url,$handler){
@@ -33,6 +34,7 @@ class App{
                     'Main/about_us'=>'Main,about_us',
                     'Contact/index'=>'Contact,index',
                     'Contact/read'=>'Contact,read',
+                    'Contact/sendMessage'=>'Contact,sendMessage',
                   ];
 
         //one by one compare the url to resolve the route

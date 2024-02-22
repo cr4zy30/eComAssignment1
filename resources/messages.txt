@@ -1,0 +1,2 @@
+{"email":"amy@email.com","message":"Hi","IP":"172.17.0.1"}
+{"email":"bob@email.com","message":"I love my job!","IP":"172.17.0.1"}

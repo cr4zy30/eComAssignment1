@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=`device-width`, initial-scale=1.0">
   <title>Messages sent</title>
 </head>
 <body>
-  <h1>Contact us - messages sent</h1>
+  <div>
+
+    <h1>Contact us - messages sent</h1>
+    
+    <?php
+
+foreach($data as $index => $messageObj) {
+  
+  echo " 
+  <h6>$messageObj->email</h6>
+  <p>$messageObj->message</p>";
+}
+
+?>
+
+  </div>
 </body>
 </html>

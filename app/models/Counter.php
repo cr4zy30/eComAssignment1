@@ -5,37 +5,33 @@ class Counter{
 
   public $count;
   
-  public function __construct(){
-        //put file into variable
-        $filename = '/resources/counter.txt'
+  public function __construct() {
+
+        $filename = 'resources/counter.txt';
         
+        if(file_exists($filename)) {
 
+          $file_handle = fopen($filename,'r');
+          flock($file_handle, LOCK_EX);
+          
+          $count = file_get_contents($filename);
 
-        //not sure if the null statement is right or if just ($file_handle is better)
-        if($file_handle != null){
-            //open eeyah
-            $file_handle = fopen($filename,'r');
-            //lock eeyah but idk if its ex or un we did ex in class so
-            flock($file_handle, LOCK_EX);
-            //read file into count variable i dont think this is right but anyway
-            //closin
-            fclose($filename);
+          flock($file_handle, LOCK_UN);
+		      fclose($file_handle);
+
         } else {
-            $count = '{"count":0}';
+          $count = '{"count":0}';
         }
 
-        //decodin it idk im confused on this
-        $count = json_decode($this);
-
-		
+        $this->count = json_decode($count)->count;
   }
 
   public function increment(){
-        $this.$count++;
+        $this->count++;
   }
 
   public function write(){
-    $filename = '/resources/counter.txt';
+    $filename = 'resources/counter.txt';
     //json encoding object into count variable
     $count = json_encode($this);
     //opening file for writing
@@ -49,7 +45,6 @@ class Counter{
 
 
   public function __toString(){
-    //ez
     return json_encode($this);
   }
 }
