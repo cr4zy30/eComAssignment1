@@ -11,6 +11,13 @@ class Count extends \app\core\Controller {
     $count->write();
 
     echo "$count->count page visits";
+
+    //what i added dont judge
+    $this->view('Count/index', $count);
+
   }
+
+
+
 
 }

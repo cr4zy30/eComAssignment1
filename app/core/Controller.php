@@ -3,10 +3,14 @@ namespace app\core;
 
 class Controller {
 	function view($name, $data=null){
-		
+		include('app/views/navbar.php');
 		include('app/views/' . $name . '.php');
-		
-		// Count index here
+		include('app/Count/index.php');
+
 
 	}
+
+
+	
+
 }

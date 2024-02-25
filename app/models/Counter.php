@@ -39,7 +39,7 @@ class Counter{
     //locking file for writing
     flock($file_handle, LOCK_EX);
     //writing with contents of count
-    fwrite($file_handle, $count . "\n");
+    fwrite($file_handle, $count);
     fclose($file_handle);
   }
 
