@@ -1,16 +1,13 @@
 <?php
 namespace app\core;
 
-class Controller {
-	function view($name, $data=null){
-		include('app/views/navbar.php');
-		include('app/views/' . $name . '.php');
-		include('app/Count/index.php');
+class Controller
+{
+	function view($name, $data = null)
+	{
 
+		$contentView = 'app/views/' . $name . '.php';
+		include('app/views/Navigation/navbar.php');
 
 	}
-
-
-	
-
 }

@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>About us</title>
   <style>
@@ -9,12 +10,13 @@
     }
   </style>
 </head>
+
 <body>
   <div>
     <h1>About us</h1>
     <p>See our incredible team of devs.</p>
     <div class="imgContainer">
-      <img src="" height="250" width="380">
+      <img src="https://i.ibb.co/4dS8YKQ/pic.jpg" height="350">
       <p>Denis Voronov</p>
     </div>
     <br>
@@ -24,4 +26,5 @@
     </div>
   </div>
 </body>
+
 </html>

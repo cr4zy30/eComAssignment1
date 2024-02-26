@@ -1,41 +1,45 @@
 <?php
 namespace app\models;
 
-class Counter{
+class Counter
+{
 
   public $count;
-  
-  public function __construct() {
 
-        $filename = 'resources/counter.txt';
-        
-        if(file_exists($filename)) {
+  public function __construct()
+  {
 
-          $file_handle = fopen($filename,'r');
-          flock($file_handle, LOCK_EX);
-          
-          $count = file_get_contents($filename);
+    $filename = 'resources/counter.txt';
 
-          flock($file_handle, LOCK_UN);
-		      fclose($file_handle);
+    if (file_exists($filename)) {
 
-        } else {
-          $count = '{"count":0}';
-        }
+      $file_handle = fopen($filename, 'r');
+      flock($file_handle, LOCK_EX);
 
-        $this->count = json_decode($count)->count;
+      $count = fread($file_handle, filesize($filename));
+
+      flock($file_handle, LOCK_UN);
+      fclose($file_handle);
+
+    } else {
+      $count = '{"count":0}';
+    }
+
+    $this->count = json_decode($count)->count;
   }
 
-  public function increment(){
-        $this->count++;
+  public function increment()
+  {
+    $this->count++;
   }
 
-  public function write(){
+  public function write()
+  {
     $filename = 'resources/counter.txt';
     //json encoding object into count variable
     $count = json_encode($this);
     //opening file for writing
-    $file_handle = fopen($filename,'w');
+    $file_handle = fopen($filename, 'w');
     //locking file for writing
     flock($file_handle, LOCK_EX);
     //writing with contents of count
@@ -44,7 +48,8 @@ class Counter{
   }
 
 
-  public function __toString(){
+  public function __toString()
+  {
     return json_encode($this);
   }
 }
