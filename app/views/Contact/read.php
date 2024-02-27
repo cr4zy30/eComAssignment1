@@ -15,7 +15,6 @@
     foreach ($data as $index => $messageObj) {
       echo "<h6>$messageObj->email</h6>
                 <p>$messageObj->message</p>";
-      // <p>$messageObj->IP</P>";
     }
 
     ?>
