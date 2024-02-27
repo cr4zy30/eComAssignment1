@@ -21,7 +21,7 @@
     </div>
     <br>
     <div class="imgContainer">
-      <img src="" height="250" width="380">
+      <img src="https://i.ibb.co/Z16VjW0/IMG-1775.jpg" height="400" width="300">
       <p>Sereen Saaida</p>
     </div>
   </div>

@@ -45,7 +45,7 @@
 
     <div class="content">
       <?php include($contentView); ?>
-      <p class="pageVisits">test</p>
+      <p class="pageVisits"></p>
     </div>
   </div>
 
